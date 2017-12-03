@@ -30,6 +30,7 @@
   display: flex;
 }
 .footer li{
+  /*flex: 是集合属性;*/
   flex-grow: 1;
   color: white;
   line-height: 1rem;
