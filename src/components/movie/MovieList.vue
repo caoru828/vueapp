@@ -20,6 +20,7 @@
       <img src="../../assets/img/loading.gif" alt="">
     </div>
 
+
     <!--<movie-list v-for="(obj,index) in movieList" :key="index" :title="obj.nm" :year="obj.snum"-->
                 <!--:avg = "obj.sc" :img = "obj.img" :desc = "obj.cat"-->
     <!--&gt;</movie-list>-->
@@ -42,16 +43,30 @@ import Axios from 'axios'
     mounted(){
     window.onscroll = () => {
       let clientheight = document.documentElement.clientHeight;
-      let sc   = document.documentElement.scrollTop;
+//      let sc   = document.documentElement.scrollTop;
+      let scbody   = document.documentElement.scrollTop||document.body.scrollTop;
       let scrollHeight = document.documentElement.scrollHeight;
 //      console.log("Ss");
       console.log(clientheight);
-      console.log(sc) ;
+//      console.log(sc) ;
+      console.log(scbody) ;
       console.log(scrollHeight);
 
-      if (scrollHeight == clientheight + sc) {
+      if (scrollHeight == clientheight + scbody) {
 
+        this.ImgShow = true;
+        Axios.get(API_PROXY +"http://m.maoyan.com/movie/list.json?type=hot&limit=10&offset="+this.movieList.length
+        )
+          .then(res=>{
+//         console.log(res);
+            let List;
+            this.ImgShow = false;
+            this.movieList = this.movieList.concat(res.data.data.movies);
 
+          })
+          .catch(()=>{
+            alert("获取数据失败！");
+          });
         console.log("到底了！");
       }
     }
@@ -101,5 +116,6 @@ import Axios from 'axios'
   }
   .loadding{
     text-align: center;
+    margin-bottom: 1rem;
   }
 </style>
