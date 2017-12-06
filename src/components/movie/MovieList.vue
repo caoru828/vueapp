@@ -40,6 +40,23 @@ import Axios from 'axios'
   },
 //    加载完成时
     mounted(){
+    window.onscroll = () => {
+      let clientheight = document.documentElement.clientHeight;
+      let sc   = document.documentElement.scrollTop;
+      let scrollHeight = document.documentElement.scrollHeight;
+//      console.log("Ss");
+      console.log(clientheight);
+      console.log(sc) ;
+      console.log(scrollHeight);
+
+      if (scrollHeight == clientheight + sc) {
+
+
+        console.log("到底了！");
+      }
+    }
+
+
 //    URL远程猫眼接口
     let URL1 = API_PROXY +"http://m.maoyan.com/movie/list.json?type=hot&limit=10&offset="+this.movieList.length;
 //   本地不好使的时候
@@ -63,6 +80,7 @@ import Axios from 'axios'
 <style scoped>
 .List{
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
   .movieDetail{
     padding: 0.2rem;
