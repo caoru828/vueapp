@@ -2,16 +2,20 @@
   <div class="List">
     <ul>
       <!--key便与虚拟dom查找，-->
-      <li v-for="movie in movieList" class="movieDetail">
-        <div class="movieImg">
-          <img :src="movie.img" alt="">
-        </div>
-        <div class="movieDescription">
-          <p  class="movieName">片名：   {{movie.nm}}</p>
-          <p>主演：   {{movie.star}}</p>
-          <p>{{movie.ver}}</p>
-          <p>电影描述：{{movie.showInfo}}</p>
-        </div>
+      <li    v-for="movie in movieList" class="movieDetail" @click="gaDde(movie.id)">
+        <!--有问题-->
+        <!--<router-link :to="{name:'/movie/movieDetail'+movie.id,params:{id:movie.id}}">-->
+          <div class="movieImg">
+            <img :src="movie.img" alt="">
+          </div>
+          <div class="movieDescription">
+            <p  class="movieName">片名：   {{movie.nm}}</p>
+            <p>主演：   {{movie.star}}</p>
+            <p>{{movie.ver}}</p>
+            <p>电影描述：{{movie.showInfo}}</p>
+          </div>
+        <!--</router-link>-->
+
       </li>
 
       </ul>
@@ -63,6 +67,9 @@ import Axios from 'axios'
             alert("获取数据失败！");
           });
 
+      },
+      gaDde(movieID){
+        this.$router.push('/movie/movieDetail/'+ movieID)
       }
 
     },

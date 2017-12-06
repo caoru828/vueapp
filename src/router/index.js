@@ -23,9 +23,9 @@ export default new Router({
           name:'moveList',
          component:MovieList
         },{
-          path:'/movie/movieDetail',
+          path:'/movie/movieDetail/:movieID',
           name:'moveDetail',
-          component:MovieList
+          component:MovieDetail
         }
 
         ]
