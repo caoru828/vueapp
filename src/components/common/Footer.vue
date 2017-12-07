@@ -1,10 +1,10 @@
 <template>
   <div>
-    <ul class="footer">
-      <li>电影</li>
-      <li>音乐</li>
-      <li>书籍</li>
-      <li>图片</li>
+    <ul class="footer" :style="{background:bg}">
+      <li> <router-link to="/movie/movieList">电影</router-link></li>
+      <li> <router-link to="/music">音乐</router-link></li>
+      <li> <router-link to="/book">书籍</router-link></li>
+      <li> <router-link to="/photos">图片</router-link></li>
     </ul>
   </div>
 </template>
@@ -16,7 +16,7 @@
       return {
 
       }
-    }
+    },props:['bg']
   }
 </script>
 
@@ -36,4 +36,10 @@
   line-height: 1rem;
   text-align: center;
 }
+  .footer a{
+    color: #cccccc;
+  }
+  .footer a.router-link-active{
+    color: white;
+  }
 </style>

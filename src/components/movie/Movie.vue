@@ -1,6 +1,8 @@
 <template>
   <div>
-    <common-header></common-header>
+    <common-header>
+      <h2 slot="title">Movie</h2>
+    </common-header>
      <router-view></router-view>
     <common-footer></common-footer>
   </div>

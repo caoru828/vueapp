@@ -1,7 +1,12 @@
 <template>
-  <div class="header">
+  <div class="header" :style="{background:bg}">
+
     <button class="btn" @click="goHome">首页</button>
-    <h2 class="title">Movie</h2>
+
+    <h2 class="title">
+    <slot name="title">默认值</slot>
+      <!--Movie-->
+    </h2>
   </div>
 </template>
 
@@ -10,14 +15,14 @@
     name: 'header',
     data () {
       return {
-
+          bg:''
         }
       },
     methods: {
       goHome() {
         this.$router.push('/')
       }
-    }
+    },props:['bg']
   }
 </script>
 
@@ -30,7 +35,7 @@
   width: 100%;
 }
 .btn{
-  background: rgb(33,150,243);
+  background: transparent;
   border:0;
   padding-top:0 ;
   padding-bottom: 0;

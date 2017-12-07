@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+// import HelloWorld from '@/components/HelloWorld'
 import Movie from '@/components/movie/Movie'
 import MovieList from '@/components/movie/MovieList'
 import MovieDetail from '@/components/movie/MovieDetail'
 import Music from '@/components/music/Music'
 import MusicList from '@/components/music/MusicList'
 import MusicDetail from '@/components/music/MusicDetail'
+import Photos from '@/components/photos/Photos'
+import Book from '@/components/book/Book'
+
 
 Vue.use(Router)
 
@@ -14,9 +17,9 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
+      component: MovieList,
       redirect:'/movie/movieList'
+      // redirect:'/book'
     },{
       path:'/movie',
       component:Movie,
@@ -48,6 +51,14 @@ export default new Router({
         }
 
       ]
+    },{
+      path:'/book',
+      name:'book',
+      component:Book
+    },{
+      path:'/photos',
+      name:'photos',
+      component:Photos
     }
   ]
 })
