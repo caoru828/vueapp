@@ -4,6 +4,9 @@ import HelloWorld from '@/components/HelloWorld'
 import Movie from '@/components/movie/Movie'
 import MovieList from '@/components/movie/MovieList'
 import MovieDetail from '@/components/movie/MovieDetail'
+import Music from '@/components/music/Music'
+import MusicList from '@/components/music/MusicList'
+import MusicDetail from '@/components/music/MusicDetail'
 
 Vue.use(Router)
 
@@ -29,6 +32,22 @@ export default new Router({
         }
 
         ]
+    },{
+      path:'/music',
+      name:'music',
+      component:Music,
+      children:[
+        {
+          path:'musicList',
+          name:'musicList',
+          component:MusicList
+        },{
+          path:'musicDetail',
+          name:'musicDetail',
+          component:MusicDetail
+        }
+
+      ]
     }
   ]
 })

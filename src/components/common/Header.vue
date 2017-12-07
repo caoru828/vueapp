@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <button class="btn">首页</button>
+    <button class="btn" @click="goHome">首页</button>
     <h2 class="title">Movie</h2>
   </div>
 </template>
@@ -11,6 +11,11 @@
     data () {
       return {
 
+        }
+      },
+    methods: {
+      goHome() {
+        this.$router.push('/')
       }
     }
   }
