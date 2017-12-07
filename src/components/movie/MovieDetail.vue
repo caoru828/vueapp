@@ -5,9 +5,11 @@
       <img :src="this.imgSrc" alt="">
     </div>
     <div class="MovieDetail">
-     <div>{{this.name}}</div>
-      <p>{{this.star}}</p>
+     <div>{{detail.nm}}</div>
+      {{detail.dir}}
+      <br>
       {{this.Info}}
+
     </div>
 
 
@@ -19,9 +21,10 @@
   export default {
     data(){
       return{
-        name:[],
+        detail:{},
+//        name:[],
         imgSrc:"",
-        star:'',
+//        star:'',
         Info:''
       }
     },
@@ -33,9 +36,10 @@
 
       Axios.get(URL3)
       .then(res=>{
-        this.name=res.data.data.MovieDetailModel.nm;
+//        this.name=res.data.data.MovieDetailModel.nm;
+        this.detail=res.data.data.MovieDetailModel;
         this.imgSrc = res.data.data.MovieDetailModel.img;
-        this.star = res.data.data.MovieDetailModel.dir;
+//        this.star = res.data.data.MovieDetailModel.dir;
         this.Info = res.data.data.MovieDetailModel.dra;
         console.log(res);
       }).catch()
@@ -49,5 +53,6 @@
 <style scoped>
 .detail{
   margin-top: 1rem;
+  margin-bottom:1rem;
 }
 </style>
