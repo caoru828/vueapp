@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="footer" :style="{background:bg}">
+    <ul class="footer" :style="{background:bga}">
       <li> <router-link to="/movie/movieList">电影</router-link></li>
       <li> <router-link to="/music">音乐</router-link></li>
       <li> <router-link to="/book">书籍</router-link></li>
@@ -16,7 +16,7 @@
       return {
 
       }
-    },props:['bg']
+    },props:['bga']
   }
 </script>
 

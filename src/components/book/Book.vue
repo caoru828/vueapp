@@ -1,11 +1,11 @@
 <template>
   <div class="book">
     ssss
-    <common-header  bg="rgb(121, 85, 72)">
+    <common-header  bga="rgb(121, 85, 72)">
       <h2 slot="title">Book</h2>
     </common-header>
     <router-view></router-view>
-    <common-footer bg="rgb(121, 85, 72)"></common-footer>
+    <common-footer bga="rgb(121, 85, 72)"></common-footer>
   </div>
 
 </template>

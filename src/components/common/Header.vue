@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :style="{background:bg}">
+  <div class="header" :style="{background:bga}">
 
     <button class="btn" @click="goHome">首页</button>
 
@@ -22,7 +22,7 @@
       goHome() {
         this.$router.push('/')
       }
-    },props:['bg']
+    },props:['bga']
   }
 </script>
 

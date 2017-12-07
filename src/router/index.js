@@ -39,6 +39,7 @@ export default new Router({
       path:'/music',
       name:'music',
       component:Music,
+      redirect:'/music/musicList',
       children:[
         {
           path:'musicList',
