@@ -1,6 +1,6 @@
 <template>
   <div class="musicDetail" v-if="musicShow">
-    <h1 class="detail">musicdetail</h1>
+    <!--<h1 class="detail">musicdetail</h1>-->
     <VueAplayer :music="songs"></VueAplayer>
   </div>
 </template>
@@ -38,7 +38,7 @@
   }
 </script>
 <style scoped>
-.detail{
+.musicDetail{
   margin-top: 1rem;
 }
 
