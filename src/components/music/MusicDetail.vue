@@ -21,12 +21,14 @@
         console.log(res);
         let list = res.data.musicData;
         list.forEach(elem=>{
-          this.songs.push(
-            title = elem.title,
-            author = elem.author,
-            url=elem.src,
-            pic = elem.musicImgSrc,
-            lrc = elem.lrc
+          this.songs.push({
+            title: elem.title,
+            author: elem.author,
+            url:elem.src,
+            pic : elem.musicImgSrc,
+            lrc : elem.lrc
+          }
+
           )
         })
         this.musicShow = true
