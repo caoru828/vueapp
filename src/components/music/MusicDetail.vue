@@ -1,7 +1,7 @@
 <template>
   <div class="musicDetail" v-if="musicShow">
     <!--<h1 class="detail">musicdetail</h1>-->
-    <VueAplayer :music="songs"></VueAplayer>
+    <VueAplayer :music="songs" :autoplay=true></VueAplayer>
   </div>
 </template>
 <script>
