@@ -5,6 +5,7 @@
   </div>
 </template>
 <script>
+//引入组件在github中查找资源
   import VueAplayer from 'vue-aplayer'
   import Axios from 'axios'
   export default {
@@ -17,6 +18,7 @@
     components:{
       VueAplayer
     },mounted(){
+//      访问的是本地文件，传到服务器上时，static这个文件也被原封不动的传上去
       Axios.get("/static/data/musicdata.json").then(res=>{
         console.log(res);
         let list = res.data.musicData;
