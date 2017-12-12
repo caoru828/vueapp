@@ -1,5 +1,6 @@
 <template>
 <ul class="musicList">
+
     <li v-for="elem in albums" v-if="showImg" class="musicDetail">
       <router-link to="musicDetail">
         <div class="MusicImg">
@@ -12,6 +13,7 @@
 </ul>
 </template>
 <script>
+//  接口
   import Axios from 'axios'
   export default {
     data(){
