@@ -51,6 +51,7 @@ import Axios from 'axios'
       loadding(){
         Axios.get(API_PROXY +"http://m.maoyan.com/movie/list.json?type=hot&limit=10&offset="+this.movieList.length
         )
+//    接口有可能不好使
           .then(res=>{
 //         console.log(res);
             let List;
