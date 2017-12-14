@@ -1,4 +1,5 @@
 <template>
+  <!--变量传进去的-->
   <div class="header" :style="{background:bga}">
 
     <button class="btn" @click="goHome">首页</button>
@@ -22,6 +23,7 @@
       goHome() {
         this.$router.push('/')
       }
+//      接收变量
     },props:['bga']
   }
 </script>

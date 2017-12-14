@@ -4,8 +4,12 @@
     <div>
       <img :src="this.imgSrc" alt="">
     </div>
+
+
     <div class="MovieDetail">
      <div>{{detail.nm}}</div>
+
+
       {{detail.dir}}
       <br>
       {{this.Info}}
