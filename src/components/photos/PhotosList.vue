@@ -29,6 +29,7 @@ export default {
 
 </script>
 <style scoped>
+  @import url(../../assets/css/common.css);
   .photos{
     margin-top:1rem;
     margin-bottom: 1rem;

@@ -1,0 +1,6 @@
+.clearfix:after{
+  /*hangji*/
+  content: "";
+  display: block;
+  clear: both;
+}
