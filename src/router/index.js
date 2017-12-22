@@ -8,6 +8,8 @@ import Music from '@/components/music/Music'
 import MusicList from '@/components/music/MusicList'
 import MusicDetail from '@/components/music/MusicDetail'
 import Photos from '@/components/photos/Photos'
+import PhotosList from '@/components/photos/PhotosList'
+import PhotosDetail from '@/components/photos/PhotosDetail'
 import Book from '@/components/book/Book'
 
 
@@ -59,7 +61,19 @@ export default new Router({
     },{
       path:'/photos',
       name:'photos',
-      component:Photos
+      component:Photos,
+      redirect:'/photos/photosList',
+      children:[
+        {
+          path:'photosList',
+          name:'photosList',
+          component : PhotosList
+        },{
+          path:'photosDetail',
+          name:'photosDetail',
+          component : PhotosDetail
+        }
+      ]
     }
   ]
 })
