@@ -21,7 +21,8 @@
       },
     methods: {
       goHome() {
-        this.$router.push('/')
+        this.$router.push('/');
+       // this.style.border=0;
       }
 //      接收变量
     },props:['bga']
