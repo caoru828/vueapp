@@ -1,11 +1,9 @@
 <template>
   <div class="photos">
 
-
   </div>
 </template>
 <script>
-
 
 
 
