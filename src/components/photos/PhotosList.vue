@@ -3,7 +3,10 @@
 
     <ul>
       <li v-for="(photo,index) in photoList" :key="index">
-        <img :src="photo.src" alt="">
+        <router-link :to="'/photos/photosDetail/'+ index">
+          <img :src="photo.src" alt="">
+        </router-link>
+
       </li>
     </ul>
 
@@ -21,8 +24,10 @@ export default {
   mounted(){
 //    promise对象
     Axios.get('/static/data/photodata.json').then(res=>{
-      this.photoList= res.data.photoData;
-    }).catch()
+        this.photoList= res.data.photoData;
+//      存到vuex里
+        this.$store.dispatch('setPhotoList',res.data.photoData)
+    }).catch(err=>{})
   }
 }
 

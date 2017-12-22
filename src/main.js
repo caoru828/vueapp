@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import './assets/css/reset.css'
 import './assets/js/rem.js'
+import store from '@/vuex/store'
 
 Vue.config.productionTip = false
 //服务器代理

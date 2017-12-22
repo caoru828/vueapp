@@ -69,7 +69,7 @@ export default new Router({
           name:'photosList',
           component : PhotosList
         },{
-          path:'photosDetail',
+          path:'photosDetail/:index',
           name:'photosDetail',
           component : PhotosDetail
         }
