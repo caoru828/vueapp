@@ -13,6 +13,7 @@
         // }
         docEl.style.fontSize = rem + 'px';
         // console.log(0.14*rem);
+      console.log("1rem="+rem+"px");
     }
 
     win.addEventListener('resize', function() {

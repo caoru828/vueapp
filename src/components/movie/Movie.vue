@@ -2,6 +2,7 @@
   <div>
     <common-header>
       <h2 slot="title">Movie</h2>
+
     </common-header>
      <router-view></router-view>
     <common-footer></common-footer>
@@ -19,6 +20,7 @@ import CommonFooter from '../common/Footer'
       CommonFooter
     }
   }
+
 </script>
 
 <style scoped>
