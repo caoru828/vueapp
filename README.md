@@ -46,6 +46,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 难点
+1.
 axios发送异步请求 vue结合ajax
 安装之后 引入
 方法调用 Axios.get('url').then( (res)=>{} ).catch( ()=>{} );
@@ -54,4 +55,25 @@ axios要写在mounted里（组件渲染完成之后，操作dom，axios请求都
 直接调用猫眼接口有跨域问题，需要服务器代理  'http://bird.ioliu.cn/v1/?url='
 将猫眼接口拼在后边即可
 
+2.
+换字：以及切换header里的title
+，slot不传参就是默认值， （slot相当于占位符，穿了以穿的为准，
+不传就是默认值）
+header.vue
+<div><slot  name = “title”>默认值</slot> </div>
+movie.vue
+<common-header>
+ <span slot="title">Movie </span>
+<common-header>
 
+3.换颜色(父组件向子组件传值)
+动态传值：传html结构或者代码段用slot，属性用prop传值，
+父组件把值传给子组件，传属性的时候自定义属性，
+(从music往header里传属性颜色)
+Music.vue
+<commmon-header bg="rgb(0,150,136)"></common-header>
+header.vue
+<div class="header" :style={background:bg}></div>
+需要配一下props:['bg']
+
+4.
