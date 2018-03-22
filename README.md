@@ -31,8 +31,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 显示电影界面，一个header一个footer，中间是电影信息，电影信息通过猫眼电影接口获取的信息，每次访问10条信息，下滑到底有加载那个gif图标，再接着显示10条，每一个电影点进去都能查看详情，这些信息也是从猫眼接口获取的
 
 
-
-
 音乐功能：
 有各种榜单，飙升榜，新歌榜，但是接口不好使了，就把这些数据写成  .json文件模拟后台，读取数据也得发送ajax请求，接口坏了，点击每个不同榜单返回同一个音乐界面，有6个音乐，每个都可以播放，会有相应歌词，点下边的footer中的music时，header、footer会换颜色
 
@@ -76,4 +74,8 @@ header.vue
 <div class="header" :style={background:bg}></div>
 需要配一下props:['bg']
 
-4.
+4.设置音乐组件出现的bug
+a-player组件上来就显示，但是读取数据时在mounted（加载渲染完成之后）里，
+开始组件：music=“songs”还没有呢，所以先v-show=flase，
+加载完事儿之后再v-show=true；（还是有错，要用v-if，
+开始连插入都不插入，组件也不渲染，数据准备好在渲染，而v-show是插入进去了，）
